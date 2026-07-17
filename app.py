@@ -27,6 +27,7 @@ if st.button("Predict"):
     # Example: pass inputs to your model
     prediction = model.predict([[age, height, weight, 1 if foot == "Right" else 0]])
     st.write("Predicted Player Position:", prediction[0])
+
 # organise inputs in a side bar
 st.sidebar.header("Player Inputs")
 
@@ -40,7 +41,7 @@ foot = st.sidebar.selectbox("Preferred Foot", ["Left", "Right"])
 if st.sidebar.button("Predict"):
     prediction = model.predict([[age, height, weight, 1 if foot == "Right" else 0]])
     st.success(f"Predicted Position: {prediction[0]}")
-3 St.success gives a green hightlight, making results stand out
+# st.success gives a green hightlight, making results stand out
 
 # Add charts to visualise dataset
 import matplotlib.pyplot as plt
@@ -50,5 +51,3 @@ fig, ax = plt.subplots()
 ax.hist(data["age"], bins=20, color="skyblue")
 st.pyplot(fig)
 # Users see a quick chart of the players ages
-
-# Deploy Updates
